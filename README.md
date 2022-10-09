@@ -24,10 +24,18 @@ A member can check the catalog of books, see information about a specific book, 
 * Librarian: responsible for adding and modifying books and members. The librarian can also issue, reserve, and return book items;
 * Member: members can search the catalogm, check which books they are borrowing at the moment and reserve books;
 
+### Class Diagram
+Available on [Diagrams](https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=library.drawio.html#R7Zttc5s4EMc%2FjV%2F6xhjsOC9jJ23Tc27aOHe56ZuObBTQWbCckJ%2F66W8BYYKRY9c9oNPRjCdBy%2FKg%2Ff8Q2gU69iTYvhck8h%2FApbzT77nbjn3b6fevnRH%2BTQy7zGA5I2XxBHOVrTDM2DeqjD1lXTGXxiVHCcAli8rGBYQhXciSjQgBm7LbC%2FDyUSPi0YphtiC8an1mrvQz66h%2FVdg%2FUOb5%2BZGt4XW2JiC5s%2BpJ7BMXNq9M9l3HnggAmS0F2wnlSfDyuDzf7575dDl8%2F%2FFz%2FC%2F5c%2Fz70x9%2FdbOdvfueTfZdEDSUF%2B9azJwv24%2FTDw%2BfH9ezm233%2Fsvf624enlju8oBRF%2BOnmiCkDx6EhN8V1rGAVejSZLc9bBU%2BU4AIjRYa%2F6FS7hQMZCUBTb4MuFqbHTM50IFGJzqYnyysxIK%2B0SslmCTCo%2FINP6uQEfmnEFApdrihoJxIti6fHVEgenu%2FIti4oOL9HbFXZ7kmfKWONAZYVvSINyzgJEwC%2FwKhzKVJ4kg480JcXmDYqEDDmgrJkP0btUImgowXPuPulOxglQQjlmSxzFtjHwT7hrsluTa4WkilXH9Y8pglWyrVBY3R51OumHVgeiDbkuOUxFIZFsA5iWI233cjQJ1YOAYpIVBOKjTYHbq9gJGqpGov%2FZ6KuhrOBtd21t4UY4M1Uj7%2B63Fh6NSEgVXBoKs2ucH%2FUwi9ChIYFJlKJWBJJ8ABtb8NIWOEcX5gyjHh9EUehSSOyIKF3jT1uXUKy6MKQmIC3PaFp4Ogz1yXhuloIIkkmZqJdBGwUKZBGozxh7Gc9H4bdAZ44hNsW0Ubf4m7kBMIsS%2BEpcJSRGVDE1zGHidxXBozThBx%2FDqrEqEIQMbPAiD3%2B9%2F1H2r1l0wmEU0QmEnBDAS1QjDotwzBtRYCvHP6iYaGgkYouBq1TMGVloJoNecokmQQfnWJVKPCLS49sYAaImokwuo5LSMxOo5E7FMzNjRGgt1rmYR%2BhYSK4JylQmaC59mudZHaAeqWJntK3qc0tetaFQTsKgK2Rm5O5pR%2FgpglwxjaROZ7gMEppcsosxCvACbrVH1w5uxwVFdyUE0SJxDtTJLYu%2BS6vyBhHBwkjENbM1Uc6oioaxywTMJY853gWFnojYxRR0BtdwLL0RIwB1jeGwoaokCXMjZLgZkQHJ8QNIKALl%2FU3grqmhEOKgQ80GCON3kzPWhoerB%2FOKSQsHuaNEHHhHXdq4sKfUGxPD9AH3t7sw%2BMuUlcOEJkl%2BDPO1Xo6wuLIQlMcbkxClqfKtjVLDItL7sujqyxAaEpEM6dMNQHgj53pAFh3GDQFAbaqnKzHFRzh%2FShI%2BU08lMJDQsNsaCrKzfLgq1lIcLOb0C4BoXGUNAVm5udLVYfQFYkNyWFWhkYnVterms0qNYUHmlMxTp9%2FvxW4mhqDHU9grAOagyO5p01bY2htnfW7HNqDOZe8QPjhP2TFxZsfWGBxfGKmrdUGqah9QKDoy8wBGk12jyTaoqD1usLjr6%2BsIBoZyhoioL2ywuOvryATeYyuctAGANwSkLDQq0stF9eMDll3TnlKQbOrSvUlVPm%2Bcqv9ZFZfsWc%2FMrMafUrM8f5FYOfvwR3OvhHcusfDT42iy8%2F03Wvvp%2B17%2F4D).
+
 ## Development
+
+### Technologies
 * [Spring Boot](https://spring.io/): back-end, API;
 * [Angular](https://angular.io/): front-end;
 * [PostgreSQL](https://www.postgresql.org/): database management;
+
+### Other Tools
+* [Diagrams](https://app.diagrams.net/): for drawing UML diagrams;
 
 ### Quick start
 Quick start guide from [official website](https://spring.io/quickstart)
