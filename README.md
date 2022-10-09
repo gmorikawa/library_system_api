@@ -58,3 +58,7 @@ Study Cases examples:
 https://www.educative.io/courses/grokking-the-object-oriented-design-interview/RMlM3NgjAyR
 
 https://csestudyzone.blogspot.com/2019/04/uml-case-study-library-management-system.html
+
+[Hibernate - JPA annotations](https://www.techferry.com/articles/hibernate-jpa-annotations.html)
+
+[Key JPA Hibernate annotations](https://thorben-janssen.com/key-jpa-hibernate-annotations/)
