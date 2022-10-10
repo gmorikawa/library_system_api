@@ -1,20 +1,23 @@
 package dev.gmorikawa.library.models;
 
-import java.util.UUID;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table
 public class Member {
 
+    /**
+     * PROPERTIES
+     */
+
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -30,21 +33,36 @@ public class Member {
 
     private String telephone;
 
-    public Member(
-        @JsonProperty("id") UUID id,
-        @JsonProperty("name") String name,
-        @JsonProperty("email") String email,
-        @JsonProperty("password") String password,
-        @JsonProperty("address") String address,
-        @JsonProperty("telephone") String telephone
-    ) {
+    /**
+     * CONSTRUCTORS
+     */
+
+    public Member() { }
+
+    public Member(Long id, String name, String email, String password, String address, String telephone) {
         this.id = id;
         this.name = name;
+        this.email = email;
+        this.password = password;
+        this.address = address;
+        this.telephone = telephone;
     }
 
-    public UUID getId() { return id; }
+    public Member(String name, String email, String password, String address, String telephone) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.address = address;
+        this.telephone = telephone;
+    }
 
-    public void setId(UUID id) { this.id = id; }
+    /**
+     * GETTERS AND SETTERS
+     */
+
+    public Long getId() { return id; }
+
+    public void setId(Long id) { this.id = id; }
 
     public String getName() { return name; }
 
