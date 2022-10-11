@@ -1,6 +1,7 @@
 package dev.gmorikawa.library.controllers;
 
-import java.util.List;
+import dev.gmorikawa.library.models.Member;
+import dev.gmorikawa.library.services.MemberService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,8 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.gmorikawa.library.models.Member;
-import dev.gmorikawa.library.services.MemberService;
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/member")
@@ -45,4 +45,5 @@ public class MemberController {
     public void modifyMember(@RequestBody Member modifiedMember) {
         memberService.updateMember(modifiedMember);
     }
+    
 }
