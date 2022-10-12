@@ -42,7 +42,7 @@ public class BookController {
     }
 
     @PutMapping
-    public void modifyMember(@RequestBody Book modifiedBook) {
+    public void modifyBook(@RequestBody Book modifiedBook) {
         bookService.updateBook(modifiedBook);
     }
 
