@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.util.UUID;
 
 @Entity
@@ -26,6 +28,11 @@ public class BookCopy {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bookId")
+    @JsonBackReference
+    /*
+     * Temporary solution until find a better one.
+     * Problem: This property will not be serialize into JSON to prevent Infinite Recursion.
+     */
     private Book book;
 
     private Boolean available;

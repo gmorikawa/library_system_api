@@ -59,3 +59,60 @@ Study Cases examples:
 * https://csestudyzone.blogspot.com/2019/04/uml-case-study-library-management-system.html
 * [Hibernate - JPA annotations](https://www.techferry.com/articles/hibernate-jpa-annotations.html)
 * [Key JPA Hibernate annotations](https://thorben-janssen.com/key-jpa-hibernate-annotations/)
+
+## Trobleshooting
+
+### Infinite Recursion when retriving data of entities that contains @OneToMany and @ManyToOne annotations
+When inserting new data of entities that contains _foreign key_ pointing to another table, it's convenient to use _@ManyToOne_ and _@OneToMay_ to create a bidirectional connection between entities. When mapping to the database, JPA will save only the reference to the table.
+
+For example, in the system different copies have different barcodes. So there's a _Book_ and _BookCopy_ tables. A book can have many copies, but a copy will only point to one book. When retriving data from _Book_ or from _BookCopy_, getter functions are used for data serialization to JSON.
+
+```java
+/*
+ * Book.java
+ */
+@OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+private List<BookCopy> copies;
+
+public List<BookCopy> getCopies() { return copies; }
+```
+
+```java
+/*
+ * BookCopy.java
+ */
+@ManyToOne(fetch = FetchType.LAZY)
+@JoinColumn(name = "bookId")
+private Book book;
+
+public Book getBook() { return book; }
+```
+
+When the book is serialized to JSON it tries to retrive all copies that are related to this book. But in the _BookCopy_ entity there's also a reference to the book, which makes the JPA search for the book that's being pointed by the copy, and again it happens for the copies that are hold by the book pointed by the previous copy, this way creating a recursion.
+
+Using _@JsonManagedReference_ and _@JsonBackReference_ was one of the encountered solutions. These two annotations works in pair, the _former_ indicating that the property inside the entity is the 'parent' and will be serialized, and the _latter_ indicating that the property is the 'child' thus will not be serialized to JSON. So in the above example it will be like:
+
+```java
+/*
+ * Book.java
+ */
+@OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+@JsonManagedReference
+private List<BookCopy> copies;
+
+public List<BookCopy> getCopies() { return copies; }
+```
+
+```java
+/*
+ * BookCopy.java
+ */
+@ManyToOne(fetch = FetchType.LAZY)
+@JoinColumn(name = "bookId")
+@JsonBackReference
+private Book book;
+
+public Book getBook() { return book; }
+```
+
+* OBSERVATION: Personally I don't like this solution because only one of the entities will take the data referenced, which is not the behaviour that I expect in this software.

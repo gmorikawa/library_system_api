@@ -33,7 +33,7 @@ public class BookCopyService {
          * The following line generates a loop between Book and BookCopy.
          * This happens because of the ManyToOne and OneToMany mapping, which is implemented in BookCopy and Book respectively.
          */
-        // newCopy.setBook(bookRepository.findById(bookId).get());
+        newCopy.setBook(bookRepository.findById(bookId).get());
         newCopy.setBarcode(UUID.randomUUID());
         bookCopyRepository.save(newCopy);
     }
