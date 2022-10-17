@@ -56,6 +56,7 @@ Study Cases examples:
 * https://csestudyzone.blogspot.com/2019/04/uml-case-study-library-management-system.html
 * [Hibernate - JPA annotations](https://www.techferry.com/articles/hibernate-jpa-annotations.html)
 * [Key JPA Hibernate annotations](https://thorben-janssen.com/key-jpa-hibernate-annotations/)
+* [JPA queries with foreign keys as parameters](https://stackoverflow.com/questions/49831492/how-to-perform-a-query-in-spring-data-jpa-with-a-foreign-key)
 
 ## Trobleshooting
 

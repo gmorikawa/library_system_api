@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import java.time.LocalDate;
@@ -36,7 +35,6 @@ public class Book {
 
     private String publisher;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     @JsonManagedReference
     /*
