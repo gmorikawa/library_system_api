@@ -1,5 +1,7 @@
 package dev.gmorikawa.library.models;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,12 +13,10 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import java.time.LocalDate;
-
 @Entity
 @Table
-public class Borrow {
-    
+public class Reservation {
+
     /**
      * PROPERTIES
      */
@@ -26,10 +26,7 @@ public class Borrow {
     private Long id;
 
     @Column(nullable = false)
-    private LocalDate issueDate;
-
-    @Column(nullable = false)
-    private Integer dueDays;
+    private LocalDate issue_date;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonManagedReference
@@ -37,13 +34,16 @@ public class Borrow {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonManagedReference
-    private BookCopy copy;
+    private Book book;
+
+    @Column(nullable = false)
+    private Boolean validity;
 
     /**
      * CONSTRUCTORS
      */
-    
-    public Borrow() { }
+
+    public Reservation() { }
 
     /**
      * GETTERS AND SETTERS
@@ -52,15 +52,15 @@ public class Borrow {
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
-    public LocalDate getIssueDate() { return issueDate; }
-    public void setIssueDate(LocalDate issueDate) { this.issueDate = issueDate; }
-
-    public Integer getDueDate() { return dueDays; }
-    public void setDueDate(Integer dueDays) { this.dueDays = dueDays; }
+    public LocalDate getIssueDate() { return issue_date; }
+    public void setIssueDate(LocalDate issue_date) { this.issue_date = issue_date; }
 
     public Member getMember() { return member; }
     public void setMember(Member member) { this.member = member; }
 
-    public BookCopy getCopy() { return copy; }
-    public void setCopy(BookCopy copy) { this.copy = copy; }
+    public Book getBook() { return book; }
+    public void setBook(Book book) { this.book = book; }
+
+    public Boolean getValidity() { return validity; }
+    public void setValidity(Boolean validity) { this.validity = validity; }
 }

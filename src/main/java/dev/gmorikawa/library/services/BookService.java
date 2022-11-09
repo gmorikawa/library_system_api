@@ -20,8 +20,21 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
+    /**
+     * Search for all books in database
+     * @return List with all books
+     */
     public List<Book> getBooks() {
         return bookRepository.findAll();
+    }
+
+    /**
+     * Search for a book with the informed ID
+     * @param bookId
+     * @return A single book
+     */
+    public Book getBookById(Long bookId) {
+        return bookRepository.findById(bookId).orElseThrow();
     }
 
     public void insertBook(Book newBook) {
@@ -39,6 +52,6 @@ public class BookService {
     }
 
     public void deleteBook(Long bookId) {
-        bookRepository.delete(bookRepository.findById(bookId).get());
+        bookRepository.delete(bookRepository.findById(bookId).orElseThrow());
     }
 }

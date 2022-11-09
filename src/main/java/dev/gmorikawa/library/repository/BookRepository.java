@@ -13,6 +13,9 @@ import java.util.Optional;
 public interface BookRepository extends JpaRepository<Book, Long> {
 
     @Query("SELECT x FROM Book x WHERE x.title = :title")
-    Optional<Book> findBookByTitle(@Param("title") String title);
+    Optional<Book> findByTitle(@Param("title") String title);
+
+    @Query("SELECT x FROM Book x WHERE x.id = :id")
+    Optional<Book> findById(@Param("id") Long id);
 
 }

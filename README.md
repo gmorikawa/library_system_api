@@ -49,6 +49,10 @@ __Windows__
 mvnw spring-boot:run
 ```
 
+### API mapping
+
+
+
 ## Study Resources
 Study Cases examples:
 
@@ -113,4 +117,4 @@ private Book book;
 public Book getBook() { return book; }
 ```
 
-* OBSERVATION: Personally I don't like this solution because only one of the entities will take the data referenced, which is not the behaviour that I expect in this software.
+* OBSERVATION: Personally I don't like this solution because only one of the entities will have the referenced data serialized, which is not the behaviour that I expect in this software.

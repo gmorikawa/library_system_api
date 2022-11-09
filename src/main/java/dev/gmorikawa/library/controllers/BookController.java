@@ -26,21 +26,38 @@ public class BookController {
         this.bookService = bookService;
     }
 
+    /**
+     * List all books
+     */
     @GetMapping
     public List<Book> getBooks() {
         return bookService.getBooks();
     }
 
+    @GetMapping("{bookId}")
+    public Book getBookById(@PathVariable Long bookId) {
+        return bookService.getBookById(bookId);
+    }
+
+    /**
+     * Register new book into database
+     */
     @PostMapping
     public void registerNewBook(@RequestBody Book newBook) {
         bookService.insertBook(newBook);
     }
 
+    /**
+     * Delete a book. All database entries related to that book will be deleted as well.
+     */
     @DeleteMapping("{bookId}")
     public void deleteBook(@PathVariable Long bookId) {
         bookService.deleteBook(bookId);
     }
 
+    /**
+     * Modify the information of a single book
+     */
     @PutMapping
     public void modifyBook(@RequestBody Book modifiedBook) {
         bookService.updateBook(modifiedBook);
