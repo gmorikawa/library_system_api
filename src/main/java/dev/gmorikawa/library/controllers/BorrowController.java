@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/borrow")
+@RequestMapping(path = "api/borrow")
 public class BorrowController {
     
     private final BorrowService borrowService;
@@ -36,12 +36,12 @@ public class BorrowController {
         return borrowService.getBookCopyBorrowList(copyId);
     }
 
-    @PostMapping("{bookId}")
+    @PostMapping
     public void registerNewBorrow(@RequestBody Borrow newBorrowEntry) {
         borrowService.insertBorrow(newBorrowEntry);
     }
 
-    @DeleteMapping("{bookCopyId}")
+    @DeleteMapping("{borrowId}")
     public void deleteBorrow(@PathVariable Long borrowId) {
         borrowService.deleteBorrow(borrowId);
     }

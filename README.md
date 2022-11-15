@@ -4,7 +4,7 @@ This project is not based on a real case, and has the purpose of showing my skil
 ## Overview
 A Library Management System is a software built ot handle the primary housekeeping functions of a library. Libraries rely on library management systems to maange asset collections as well as relationships with their members. Library management systems help libraries keep track of the books and their checkouts, as well as members' subscriptions and profiles.
 
-### Case
+### Study Case
 A library needs a system to manage all books it has in its catalogue. With a system the library will register and modify the data of books and members. Also, keeping track of number of book copies, availability and return date.
 
 Each book copy will be treated as a single unique object inside the system, meaning that the same book will have difference barcodes for identifying them.
@@ -50,8 +50,44 @@ mvnw spring-boot:run
 ```
 
 ### API mapping
+__Book__
+* _GET api/book_ - Get list of books
+* _GET api/book/{bookId}_ - Search for a book by ID
+* (not implemented) _GET api/book/search_ - Given parameters conditions searches for books
+* _POST api/book_ - Register a new book
+* _PUT api/book/{bookId}_ - Update information of a book
+* _DELETE api/book/{bookId}_ - Delete information of a book
 
+__BookCopy__
+* _GET api/bookcopy_ - Gets list of book copies
+* _GET api/bookcopy/{bookcopyId}_ - Search for a book copy by ID
+* (not implemented) _GET api/bookcopy/book/{bookId}_ - Get copies by book
+* _POST api/bookcopy_ - Register a new book copy
+* _PUT api/bookcopy/{bookcopyId}_ - Update a book copy information
+* _DELETE api/bookcopy/{bookcopyId}_ - Delete a book copy related
 
+__Borrow__
+* _GET api/borrow_ - Get list of borrow entries
+* _GET api/borrow/member/{memberId}_ - Get list of borrowed books by member
+* _GET api/borrow/copy/{copyId}_ - Get list of borrowed books by copy
+* _POST api/borrow_ - Register a new borrow information
+* _DELETE api/borrow/{borrowId}_ - Delete a entry of a borrowed book
+
+__Member__
+* _GET api/member_ - Get list of members
+* _GET api/member/{memberId}_ - Search for a member by ID
+* _GET api/member/search_ - Search for a member for given conditions
+* _POST api/member_ - Register new member
+* _PUT api/member/{memberId}_ - Update a member information
+* _DELETE api/member/{memberId}_ - Delete a member
+
+__Reservation__
+* _GET api/reservation_ - Get list of reservation
+* _GET api/reservation/{reservationId}_ - Search for a reservation by ID
+* _GET api/reservation/member/{memberId}_ - Search for reservations made by member
+* _GET api/reservation/book/{bookId}_ - Search for reservations by book
+* _POST api/reservation_ - Register a new reservation
+* _DELETE api/reservation/{reservationId}_ - Delete a reservation
 
 ## Study Resources
 Study Cases examples:

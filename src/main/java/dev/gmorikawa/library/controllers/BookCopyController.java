@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/bookcopy")
+@RequestMapping(path = "api/bookcopy")
 public class BookCopyController {
     
     private final BookCopyService copyService;
