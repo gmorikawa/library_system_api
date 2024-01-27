@@ -18,10 +18,6 @@ import java.util.List;
 @Table
 public class Book {
 
-    /**
-     * PROPERTIES
-     */
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -43,10 +39,6 @@ public class Book {
      */
     private List<BookCopy> copies;
 
-    /**
-     * CONSTRUCTORS
-     */
-
     public Book() { }
 
     public Book(Long id, String title, String author, LocalDate publicationDate, String publisher) {
@@ -64,10 +56,6 @@ public class Book {
         this.publisher = publisher;
     }
 
-    /**
-     * GETTERS AND SETTERS
-     */
-
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -84,6 +72,4 @@ public class Book {
     public void setPublisher(String publisher) { this.publisher = publisher; }
 
     public List<BookCopy> getCopies() { return copies; }
-    /**** no setter ****/
-
 }

@@ -11,10 +11,6 @@ import javax.persistence.Table;
 @Table
 public class Member {
 
-    /**
-     * PROPERTIES
-     */
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -32,10 +28,6 @@ public class Member {
     private String address;
 
     private String telephone;
-
-    /**
-     * CONSTRUCTORS
-     */
 
     public Member() { }
 
@@ -55,11 +47,7 @@ public class Member {
         this.address = address;
         this.telephone = telephone;
     }
-
-    /**
-     * GETTERS AND SETTERS
-     */
-
+    
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

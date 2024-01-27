@@ -17,10 +17,6 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Table
 public class Reservation {
 
-    /**
-     * PROPERTIES
-     */
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -39,15 +35,7 @@ public class Reservation {
     @Column(nullable = false)
     private Boolean validity;
 
-    /**
-     * CONSTRUCTORS
-     */
-
     public Reservation() { }
-
-    /**
-     * GETTERS AND SETTERS
-     */
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }

@@ -40,10 +40,6 @@ public class BookCopy {
     @Column(unique = true)
     private UUID barcode;
 
-    /**
-     * CONSTRUCTORS
-     */
-
     public BookCopy() { }
 
     public BookCopy(Long id, Book book, Boolean available, UUID barcode) {
@@ -58,10 +54,6 @@ public class BookCopy {
         this.available = available;
         this.barcode = barcode;
     }
-
-    /**
-     * GETTERS AND SETTERS
-     */
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }

@@ -30,10 +30,6 @@ public class BorrowService {
         borrowRepository.save(newBorrow);
     }
 
-    /*
-     * Borrow entity might not have a UPDATE function
-     */
-
     public void deleteBorrow(Long borrowId) {
         borrowRepository.delete(borrowRepository.findById(borrowId).get());
     }
